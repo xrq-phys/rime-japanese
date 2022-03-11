@@ -3,7 +3,7 @@
 # encoding: utf-8
 
 schema:
-  schema_id: japanese
+  schema_id: japanese_half_width_kana
   name: 日本語／半角かな
   version: 'v0.2'
 
@@ -70,7 +70,7 @@ speller:
     # - 'derive/i_e/ye/'
 
 translator:
-  dictionary: japanese.half_width_kana
+  dictionary: japanese_half_width_kana
   spelling_hints: 5
   comment_format:
     - 'xlit|q|ー|'

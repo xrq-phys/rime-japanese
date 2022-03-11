@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 ---
-name: japanese.extended
+name: japanese
 version: 'v0.2-20180411'
 
 import_tables:
