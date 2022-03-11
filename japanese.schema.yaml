@@ -15,18 +15,19 @@ schema:
 switches:
   - name: ascii_mode
     reset: 0
-    states: [ 中文, 西文 ]
+    states: [ 和文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
-  - name: simplification
-    states: [ 漢字, 汉字 ]
-  #- options: [jp_variants, zh_simp, zh_tw ]
-  #- options: [zh_simp, zh_tw ]
-  #  reset: 0
-  #  states:
-  #    #- 字形 → 日本
-  #    - 字形 → 大陸
-  #    - 字形 → 台灣
+  # - name: extended_charset
+  #   states: [ かな, 漢字 ]
+  # - name: simplification
+  #   states: [ 漢字, 汉字 ]
+  # - options: [ ja_jp, zh_simp, zh_tw ]
+  #   reset: 0
+  #   states:
+  #     - 字形 → 日本
+  #     - 字形 → 大陸
+  #     - 字形 → 台灣
   - name: ascii_punct
     states: [ 。，, ．， ]
 

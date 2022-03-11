@@ -2,7 +2,7 @@
 # vim: set noet:
 
 ---
-name: japanese.kana
+name: japanese.hiragana
 version: 'v0.2-20180411'
 sort: by_weight
 ...
