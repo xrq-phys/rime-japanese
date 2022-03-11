@@ -438,3 +438,8 @@ recognizer:
 #   option_name: jp_variants
 #   opencc_config: jp_t2s.json
 #   tips: none
+
+__patch:
+  # 用家自選配置
+  - japanese.custom:/patch?
+
