@@ -70,11 +70,37 @@ speller:
   alphabet: 'zyxwvutsrqponmlkjihgfedcba-_'
   delimiter: " '"
   algebra:
+    # 小假名和长音符号的直接输入
     - 'derive/_/x/'
     - 'derive/-/q/'
+    # 拉丁代替表示
+    # き、ぎ
+    # し、じ
+    - 'derive/shi/si'
+    - 'derive/sha/sya'
+    - 'derive/shu/syu'
+    - 'derive/sho/syo'
+    - 'derive/ja/zya'
+    - 'derive/ju/zyu'
+    - 'derive/jo/zyo'
+    # ち、ぢ
+    - 'derive/chi/ti'
+    - 'derive/cha/tya'
+    - 'derive/chu/tya'
+    - 'derive/cho/tyo'
+    - 'derive/ji/di'
+    - 'derive/ja/dya'
+    - 'derive/ju/dyu'
+    - 'derive/jo/dyo'
+    - 'derive/ji/zi' # Yet alternative spelling.
+    - 'derive/ja/zya'
+    - 'derive/ju/zyu'
+    - 'derive/jo/zyo'
+    # ふ
+    - 'derive/fu/hu/'
+    # TODO: 对促音进行拉丁字母优化
     # Add / remove rules the as you wish
-    - 'derive/i_e/ye/'
-    # - 'derive/fu/hu/'
+    # - 'derive/i_e/ye/'
 
 translator:
   dictionary: japanese
