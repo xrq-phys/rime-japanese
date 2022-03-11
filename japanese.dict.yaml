@@ -8,5 +8,6 @@ version: 'v0.2-20180411'
 import_tables:
   - 'japanese.mozc'
   - 'japanese.jmdict'
-  - 'japanese.kana'
+  - 'japanese.hiragana'
+  - 'japanese.katakana'
 ...
