@@ -45,7 +45,7 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
-    - affix_segmentor@putonghua_to_kanji_lookup
+    - affix_segmentor@mandarin_lookup
     - affix_segmentor@hannom_lookup
     - affix_segmentor@hanja_lookup
     - punct_segmentor
@@ -54,16 +54,16 @@ engine:
     - punct_translator
     - script_translator
     - reverse_lookup_translator
-    - script_translator@putonghua_to_kanji_lookup
+    - script_translator@mandarin_lookup
     - script_translator@hannom_lookup
     - script_translator@hanja_lookup
   filters:
     - simplifier
-    #- simplifier@jp_variants
-    #- simplifier@zh_simp
-    #- simplifier@zh_tw
+    # - simplifier@ja_jp
+    # - simplifier@zh_simp
+    # - simplifier@zh_tw
     - uniquifier
-    - reverse_lookup_filter@putonghua_to_kanji_reverse_lookup
+    - reverse_lookup_filter@mandarin_reverse_lookup
     - reverse_lookup_filter@hannom_reverse_lookup
     - reverse_lookup_filter@hanja_reverse_lookup
 
@@ -111,75 +111,16 @@ translator:
   preedit_format:
     - 'xlit|q|ー|'
 
-putonghua_to_kanji_lookup:
-  tag: putonghua_to_kanji_lookup
-  prefix: "`"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
+mandarin_lookup:
+  tag: mandarin_lookup
+  prefix: "`" # 鍵入反查鍵「`」
   dictionary: terra_pinyin.extended
-  prism: td_pinyin_flypy
+  prism: terra_pinyin
   preedit_format:
-    - xform/([bpmfdtnljqx])n/$1iao/
-    - xform/(\w)g/$1eng/
-    - xform/(\w)q/$1iu/
-    - xform/(\w)w/$1ei/
-    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
-    - xform/(\w)t/$1ve/
-    - xform/(\w)y/$1un/
-    - xform/([dtnlgkhvuirzcs])o/$1uo/
-    - xform/(\w)p/$1ie/
-    - xform/([jqx])s/$1iong/
-    - xform/(\w)s/$1ong/
-    - xform/(\w)d/$1ai/
-    - xform/(\w)f/$1en/
-    - xform/(\w)h/$1ang/
-    - xform/(\w)j/$1an/
-    - xform/([gkhvuirzcs])k/$1uai/
-    - xform/(\w)k/$1ing/
-    - xform/([jqxnl])l/$1iang/
-    - xform/(\w)l/$1uang/
-    - xform/(\w)z/$1ou/
-    - xform/([gkhvuirzcs])x/$1ua/
-    - xform/(\w)x/$1ia/
-    - xform/(\w)c/$1ao/
-    - xform/([dtgkhvuirzcs])v/$1ui/
-    - xform/(\w)b/$1in/
-    - xform/(\w)m/$1ian/
-    - xform/([aoe])\1(\w)/$1$2/
-    - "xform/(^|[ '])v/$1zh/"
-    - "xform/(^|[ '])i/$1ch/"
-    - "xform/(^|[ '])u/$1sh/"
     - xform/([nl])v/$1ü/
     - xform/([nl])ue/$1üe/
     - xform/([jqxy])v/$1u/
-    - xform/eh/ê/
-    - 'xform ([aeiou])(ng?|r)([-;/<,>\\.]) $1$3$2'
-    - 'xform ([aeo])([iuo])([-;/<,>\\.]) $1$3$2'
-    - 'xform a[-;] ā'
-    - 'xform a/ á'
-    - 'xform a[<,] ǎ'
-    - 'xform a[>\\.] à'
-    - 'xform e[-;] ē'
-    - 'xform e/ é'
-    - 'xform e[<,] ě'
-    - 'xform e[>\\.] è'
-    - 'xform o[-;] ō'
-    - 'xform o/ ó'
-    - 'xform o[<,] ǒ'
-    - 'xform o[>\\.] ò'
-    - 'xform i[-;] ī'
-    - 'xform i/ í'
-    - 'xform i[<,] ǐ'
-    - 'xform i[>\\.] ì'
-    - 'xform u[-;] ū'
-    - 'xform u/ ú'
-    - 'xform u[<,] ǔ'
-    - 'xform u[>\\.] ù'
-    - 'xform ü[-;] ǖ'
-    - 'xform ü/ ǘ'
-    - 'xform ü[<,] ǚ'
-    - 'xform ü[>\\.] ǜ'
   comment_format:
-    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
-    - xform ([aeo])([iuo])([1234]) $1$3$2
     - xform a1 ā
     - xform a2 á
     - xform a3 ǎ
@@ -204,14 +145,10 @@ putonghua_to_kanji_lookup:
     - xform v2 ǘ
     - xform v3 ǚ
     - xform v4 ǜ
-    - xform/([nljqxy])v/$1ü/
-    - xform/eh[0-5]?/ê/
-    - xform/([a-z]+)[0-5]/$1/
-  tips: 【普查日】
-  #closing_tips: 【粵拼】
+  tips: 〔陸普〕
 
-putonghua_to_kanji_reverse_lookup:
-  tags: [ putonghua_to_kanji_lookup ]
+mandarin_reverse_lookup:
+  tags: [ mandarin_lookup ]
   dictionary: japanese
   spelling_hints: 10
   comment_format:
@@ -220,7 +157,7 @@ putonghua_to_kanji_reverse_lookup:
     - 'xlit|q|ー|'
 
 # simplifier:
-#  option_name: jp_variants
+#  option_name: ja_jp
 #  opencc_config: jp_t2s.json
 
 reverse_lookup:
@@ -236,7 +173,7 @@ reverse_lookup:
 
 hannom_lookup:
   tag: hannom_lookup
-  prefix: "`V"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
+  prefix: "`V"  # 在反查鍵「`」之後再鍵入〔大寫〕「J」
   suffix: "`"
   dictionary: hannomPS
   preedit_format:
@@ -315,7 +252,7 @@ hannom_lookup:
     - 'xform yj ỵ'
     - 'xform yx ỹ'
     - 'xform yr ỷ'
-  tips: 【越】
+  tips: 〔越〕
 
 hannom_reverse_lookup:
   tags: [ hannom_lookup ]
@@ -326,8 +263,8 @@ hannom_reverse_lookup:
     - 'xform ([ae])([ou])([sfjxr]) $1$3$2'
     - 'xform (aw|ow|uw)([iunptcmy])([sfjxr]) $1$3$2'
     - 'xform (aw|ow|uw)(ng|nh|ch)([sfjxr]) $1$3$2'
-#    - 'xform z ，【𡨸標準】'
-#    - 'xform , ，【𡨸異體】'
+#    - 'xform z ，〔𡨸標準〕'
+#    - 'xform , ，〔𡨸異體〕'
     - 'xform z '
     - 'xform dd đ'
     - 'xform aa â'
@@ -396,7 +333,6 @@ hannom_reverse_lookup:
     - 'xform yj ỵ'
     - 'xform yx ỹ'
     - 'xform yr ỷ'
-  #closing_tips: 【粵拼】
 
 hanja_lookup:
   tag: hanja_lookup
@@ -405,15 +341,13 @@ hanja_lookup:
   dictionary: "hangyl"
   preedit_format:
     - xform/'/ /
-    - xform/(^|[ '])([qx])/$1/
     - xform/([qx])/ng/
-  tips: 【韓】
+  tips: 〔韓〕
 
 hanja_reverse_lookup:
   tags: [ hanja_lookup ]
   dictionary: "hangyl"
   comment_format:
-    - xform/(^|[ '])q/$1/
     - xform/q/ng/
 
 punctuator:
@@ -441,14 +375,13 @@ recognizer:
   import_preset: default
   patterns:
     reverse_lookup: "`H[a-z]*`?$"
-    putonghua_to_kanji_lookup: "`[a-z;/,.]*`?$"
+    mandarin_lookup: "`[a-z;/,.]*`?$"
     hannom_lookup: "`V[a-z]*?$"
     hanja_lookup: "`K[a-z]*?$"
 
-#zh_jp:
+# zh_jp:
 #  option_name: zh_jp
 #  opencc_config: jp_t2s.json
-#  #tips: all
 #  tips: none
 
 # zh_simp:
@@ -461,8 +394,8 @@ recognizer:
 #   opencc_config: t2tw.json
 #   tips: none
 
-# jp_variants:
-#   option_name: jp_variants
+# ja_jp:
+#   option_name: ja_jp
 #   opencc_config: jp_t2s.json
 #   tips: none
 
