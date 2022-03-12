@@ -9,7 +9,7 @@ schema:
   author:
     - ensigma96 <ensigma96@gmail.com>
   dependencies:
-    - terra_pinyin.extended # for using reverse lookup
+    - terra_pinyin # for using reverse lookup
     - stroke
 
 switches:
@@ -114,7 +114,7 @@ translator:
 mandarin_lookup:
   tag: mandarin_lookup
   prefix: "`" # 鍵入反查鍵「`」
-  dictionary: terra_pinyin.extended
+  dictionary: terra_pinyin
   prism: terra_pinyin
   preedit_format:
     - xform/([nl])v/$1ü/
@@ -173,7 +173,7 @@ reverse_lookup:
 
 hannom_lookup:
   tag: hannom_lookup
-  prefix: "`V"  # 在反查鍵「`」之後再鍵入〔大寫〕「J」
+  prefix: "`V"  # 在反查鍵「`」之後再鍵入〔大寫〕「V」
   suffix: "`"
   dictionary: hannomPS
   preedit_format:
@@ -336,7 +336,7 @@ hannom_reverse_lookup:
 
 hanja_lookup:
   tag: hanja_lookup
-  prefix: "`K"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
+  prefix: "`K"  # 在反查鍵「`」之後再鍵入〔大寫〕「K」
   suffix: "`"
   dictionary: "hangyl"
   preedit_format:
