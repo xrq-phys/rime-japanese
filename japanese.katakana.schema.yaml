@@ -41,29 +41,6 @@ speller:
     - 'derive/_/x/'
     - 'derive/-/q/'
     # 拉丁代替表示
-    # き、ぎ
-    # し、じ
-    - 'derive/shi/si'
-    - 'derive/sha/sya'
-    - 'derive/shu/syu'
-    - 'derive/sho/syo'
-    - 'derive/ja/zya'
-    - 'derive/ju/zyu'
-    - 'derive/jo/zyo'
-    # ち、ぢ
-    - 'derive/tsu/tu'
-    - 'derive/chi/ti'
-    - 'derive/cha/tya'
-    - 'derive/chu/tya'
-    - 'derive/cho/tyo'
-    - 'derive/ji/di'
-    - 'derive/ja/dya'
-    - 'derive/ju/dyu'
-    - 'derive/jo/dyo'
-    - 'derive/ji/zi' # Yet alternative spelling.
-    - 'derive/ja/zya'
-    - 'derive/ju/zyu'
-    - 'derive/jo/zyo'
     # ふ
     - 'derive/fu/hu/'
     # TODO: 对促音进行拉丁字母优化

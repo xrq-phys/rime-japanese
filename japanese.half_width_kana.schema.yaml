@@ -47,23 +47,21 @@ speller:
     - 'derive/sha/sya'
     - 'derive/shu/syu'
     - 'derive/sho/syo'
+    - 'derive/ji/zi'
     - 'derive/ja/zya'
     - 'derive/ju/zyu'
     - 'derive/jo/zyo'
+    - 'derive/ji/di'
+    - 'derive/ja/dya'
+    - 'derive/ju/dyu'
+    - 'derive/jo/dyo'
+    - 'derive/jo/jyo' # Yet other spellings.
     # ち、ぢ
     - 'derive/tsu/tu'
     - 'derive/chi/ti'
     - 'derive/cha/tya'
     - 'derive/chu/tya'
     - 'derive/cho/tyo'
-    - 'derive/ji/di'
-    - 'derive/ja/dya'
-    - 'derive/ju/dyu'
-    - 'derive/jo/dyo'
-    - 'derive/ji/zi' # Yet alternative spelling.
-    - 'derive/ja/zya'
-    - 'derive/ju/zyu'
-    - 'derive/jo/zyo'
     # ふ
     - 'derive/fu/hu/'
     # TODO: 对促音进行拉丁字母优化
