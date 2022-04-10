@@ -6,9 +6,9 @@ name: japanese
 version: 'v0.2-20220410'
 
 import_tables:
-  - 'japanese.mozc'
   - 'japanese.hiragana'
   - 'japanese.katakana'
+  - 'japanese.mozc'
 ...
 
 〃	onaji
@@ -17,3 +17,12 @@ import_tables:
 々	noma
 ○	maru
 〇	maru
+↑	ue
+↓	shita
+←	hidari
+→	migi
+×	batsu
+♡	ha-to
+♤	supe-do
+♢	daiya
+♧	kurabu
