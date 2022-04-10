@@ -3,11 +3,17 @@
 
 ---
 name: japanese
-version: 'v0.2-20180411'
+version: 'v0.2-20220410'
 
 import_tables:
   - 'japanese.mozc'
-  - 'japanese.jmdict'
   - 'japanese.hiragana'
   - 'japanese.katakana'
 ...
+
+〃	onaji
+〃	onajiku
+々	noma
+々	noma
+○	maru
+〇	maru
