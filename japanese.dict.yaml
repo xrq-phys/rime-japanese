@@ -8,15 +8,10 @@ version: 'v0.2-20220410'
 import_tables:
   - 'japanese.hiragana'
   - 'japanese.katakana'
+  - 'japanese.jmdict'
   - 'japanese.mozc'
 ...
 
-〃	onaji
-〃	onajiku
-々	noma
-々	noma
-○	maru
-〇	maru
 ↑	ue
 ↓	shita
 ←	hidari
